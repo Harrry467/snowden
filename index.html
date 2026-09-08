@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yr Wyddfa · 25–27 Oct</title>
+<meta name="description" content="Group camping and Yr Wyddfa summit plan for 25–27 October 2026, including routes, safety, weather checks and packing checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE0;
+    --card:#F8F5EE;
+    --ink:#20261D;
+    --pine:#2C3B2E;
+    --pine-dark:#171F18;
+    --slate:#5B6560;
+    --rust:#AD5127;
+    --rust-light:#E9D3C4;
+    --heather:#5F5169;
+    --heather-light:#E3DCE6;
+    --line:#D8D0BE;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 .4em 0;
+    color:var(--pine-dark);
+  }
+  a{color:var(--rust);}
+  p{margin:0 0 1em 0;}
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:12px;
+    background:var(--pine);
+    color:var(--paper);
+    padding:16px 28px;
+    border-bottom:3px solid var(--pine-dark);
+  }
+  .brand{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600;}
+  .brand span{font-weight:400; opacity:.75; font-size:.95rem; margin-left:8px;}
+  nav{display:flex; gap:6px;}
+  nav button{
+    font-family:'Work Sans', sans-serif;
+    font-size:.92rem;
+    background:transparent;
+    border:1px solid rgba(239,234,224,.35);
+    color:var(--paper);
+    padding:8px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease;
+  }
+  nav button:hover{background:rgba(239,234,224,.12);}
+  nav button.active{background:var(--rust); border-color:var(--rust); color:#fff;}
+
+  main{max-width:880px; margin:0 auto; padding:0 24px 80px;}
+  .page{display:none; animation:fade .35s ease;}
+  .page.active{display:block;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+
+  .hero{
+    padding:56px 0 40px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    margin-bottom:36px;
+  }
+  .hero .eyebrow{color:var(--slate); font-size:.95rem;}
+  .hero h1{font-size:2.6rem; line-height:1.08; max-width:11ch;}
+  .hero p.lede{font-size:1.1rem; max-width:52ch; color:var(--slate);}
+  .contour{position:absolute; right:-10px; top:10px; width:220px; opacity:.5; pointer-events:none;}
+
+  .big-stat{
+    display:flex; align-items:baseline; gap:14px; margin:18px 0 8px;
+    flex-wrap:wrap;
+  }
+  .big-stat .num{font-family:'Fraunces', serif; font-size:3.4rem; font-weight:600; color:var(--rust); line-height:1;}
+  .big-stat .label{font-size:1.05rem; color:var(--ink); max-width:34ch;}
+
+  .timeline{list-style:none; margin:0; padding:0;}
+  .timeline li{
+    display:grid; grid-template-columns:64px 1fr; gap:18px;
+    padding:22px 0; border-top:1px solid var(--line);
+  }
+  .timeline li:first-child{border-top:none;}
+  .daynum{font-family:'Fraunces', serif; font-size:1.8rem; color:var(--slate); font-weight:500;}
+  .timeline h3{margin-bottom:.25em; font-size:1.2rem;}
+  .timeline .date{color:var(--slate); font-size:.9rem; margin-bottom:.5em;}
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin:28px 0;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:20px 20px 22px;
+  }
+  .card h3{font-size:1.1rem; margin-bottom:.15em;}
+  .card .tag{
+    display:inline-block; font-size:.8rem; padding:2px 10px; border-radius:999px;
+    background:var(--rust-light); color:#7D3518; margin-bottom:10px;
+  }
+  .card dl{margin:12px 0 0; font-size:.92rem;}
+  .card dt{color:var(--slate); float:left; width:78px; clear:left;}
+  .card dd{margin:0 0 6px 78px;}
+
+  section.block{margin:40px 0;}
+  section.block h2{font-size:1.5rem; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:16px;}
+
+  .callout{
+    background:var(--heather-light); border-left:4px solid var(--heather);
+    padding:16px 20px; border-radius:0 8px 8px 0; margin:20px 0;
+  }
+  .callout strong{color:var(--pine-dark);}
+
+  ul.plain{padding-left:1.2em; margin:0 0 1em;}
+  ul.plain li{margin-bottom:.4em;}
+
+  .links{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .links a{
+    display:block; padding:12px 16px; background:var(--card); border:1px solid var(--line);
+    border-radius:8px; text-decoration:none; color:var(--ink); font-size:.95rem;
+  }
+  .links a span{display:block; color:var(--rust); font-size:.82rem; margin-top:2px;}
+
+  .kit-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:8px;}
+  @media (max-width:640px){.kit-grid{grid-template-columns:1fr;} .hero .contour{display:none;} .card dt{width:70px;} .card dd{margin-left:70px;}}
+  .kit-col h3{font-size:1.15rem; margin-bottom:12px;}
+  .checklist{list-style:none; margin:0; padding:0;}
+  .checklist li{
+    display:flex; align-items:flex-start; gap:10px; padding:9px 0;
+    border-top:1px solid var(--line); cursor:pointer; user-select:none;
+  }
+  .checklist li:first-child{border-top:none;}
+  .checklist input{margin-top:4px; accent-color:var(--rust); width:16px; height:16px; flex:none;}
+  .checklist li.done span{text-decoration:line-through; color:var(--slate);}
+
+  footer{max-width:880px; margin:0 auto; padding:20px 24px 60px; color:var(--slate); font-size:.85rem;}
+
+  @media print{
+    @page{margin:1.5cm;}
+    *{animation:none !important; transition:none !important;}
+    body{background:#fff; color:#000;}
+    .topbar{position:static; background:#fff; color:#000; border-bottom:1px solid #999;}
+    .brand span{color:#444;} nav{display:none;}
+    main{max-width:none; padding:0;} .page{display:block !important; animation:none;}
+    .hero{padding:28px 0 20px; margin-bottom:20px;} .hero .contour{display:none;}
+    .card,.links a,.callout{break-inside:avoid; background:#fff;}
+    .links a{color:#000;} .links a span{color:#333;}
+    footer{max-width:none; padding:20px 0;} .checklist li{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Yr Wyddfa<span>Llyn Gwynant · 25–27 Oct 2026</span></div>
+  <nav role="tablist" aria-label="Trip sections">
+    <button id="tab-plan" data-page="plan" class="active" type="button" role="tab" aria-selected="true" aria-controls="plan">The plan</button>
+    <button id="tab-safety" data-page="safety" type="button" role="tab" aria-selected="false" aria-controls="safety">Safety</button>
+    <button id="tab-kit" data-page="kit" type="button" role="tab" aria-selected="false" aria-controls="kit">What to bring</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PAGE 1: PLAN -->
+  <section id="plan" class="page active" role="tabpanel" aria-labelledby="tab-plan" tabindex="0">
+    <div class="hero">
+      <svg class="contour" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#2C3B2E" stroke-width="1.2">
+          <path d="M10 120 Q 60 40 100 60 T 190 100"/>
+          <path d="M20 130 Q 65 60 105 78 T 195 115"/>
+          <path d="M35 138 Q 70 80 110 95 T 198 128"/>
+        </g>
+      </svg>
+      <p class="eyebrow">A group hike &amp; camp for around 10</p>
+      <h1>Three days at Yr Wyddfa</h1>
+      <p class="lede">Camping at Llyn Gwynant, with a shot at the summit of Wales' highest mountain in between.</p>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <div class="daynum">1</div>
+        <div>
+          <div class="date">Sunday 25 October</div>
+          <h3>Arrive &amp; set up camp</h3>
+          <p>Aim to reach Llyn Gwynant with enough daylight to pitch tents and get bearings — this is the weekend the clocks go back, so the evening arrives an hour earlier than you'd expect. A relaxed first night: food at camp, or a short walk to the Pen y Gwryd Hotel if anyone fancies a pub; Beddgelert is roughly 5 miles away, so treat that as a drive rather than an evening walk.</p>
+        </div>
+      </li>
+      <li>
+        <div class="daynum">2</div>
+        <div>
+          <div class="date">Monday 26 October</div>
+          <h3>Summit day</h3>
+          <p>The main event. Start early — see the route options below — and build in a buffer, since a group of ten will move at the pace of its slowest member. Back at camp by dark with a hot meal waiting is the goal.</p>
+        </div>
+      </li>
+      <li>
+        <div class="daynum">3</div>
+        <div>
+          <div class="date">Tuesday 27 October</div>
+          <h3>Pack down &amp; head home</h3>
+          <p>A shorter day: strike camp, do a last check for litter and gear left behind, and head off. If legs allow, Beddgelert or Llyn Dinas make for a gentle, flat stroll before the drive home.</p>
+        </div>
+      </li>
+    </ol>
+
+    <section class="block">
+      <h2>Getting to the top: three route options</h2>
+      <p>All six paths up Yr Wyddfa are officially graded Hard or Strenuous by Eryri National Park — none of them are a casual walk, whatever their reputation. With ten of you, it's worth agreeing on one route as a group rather than splitting up on the mountain.</p>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Closest to camp</span>
+          <h3>Watkin Path</h3>
+          <dl>
+            <dt>Starts</dt><dd>Pont Bethania car park, a short drive or walk from Llyn Gwynant</dd>
+            <dt>Distance</dt><dd>~8 miles round trip</dd>
+            <dt>Ascent</dt><dd>~1,015m</dd>
+            <dt>Time</dt><dd>6–7 hours</dd>
+          </dl>
+          <p style="margin-top:10px;">Steep and rocky, especially near the top and on the knees on the way down. Convenient logistically, but don't pick it just for that reason.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Shortest</span>
+          <h3>Miners' / Pyg Track</h3>
+          <dl>
+            <dt>Starts</dt><dd>Pen y Pass (needs pre-booked parking, or the Sherpa'r Wyddfa bus)</dd>
+            <dt>Distance</dt><dd>~7 miles round trip</dd>
+            <dt>Ascent</dt><dd>~700–740m</dd>
+            <dt>Time</dt><dd>5–6 hours</dd>
+          </dl>
+          <p style="margin-top:10px;">Very popular, with a small car park that can fill early. Shorter than the Watkin Path, but still steep in places. The Llanberis Path is the most popular route overall.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Gentlest gradient</span>
+          <h3>Llanberis Path</h3>
+          <dl>
+            <dt>Starts</dt><dd>Llanberis village, ~25 minutes' drive away</dd>
+            <dt>Distance</dt><dd>~9 miles round trip</dd>
+            <dt>Ascent</dt><dd>~950m</dd>
+            <dt>Time</dt><dd>5–7 hours</dd>
+          </dl>
+          <p style="margin-top:10px;">Longest in distance but the least steep, following the railway line most of the way. A reasonable choice if fitness levels in the group vary a lot.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>About the railway:</strong> the railway information is inconsistent: its site says the summit building (Hafod Eryri, including café and toilets) closes for the season on 25 October, while its timetable information has also listed diesel services beyond that date. For 26 October, assume there will be no summit café or toilets and do not rely on the railway for transport; check the operator’s latest timetable before travelling.
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Useful links</h2>
+      <div class="links">
+        <a href="https://eryri.gov.wales/visit/snowdon/climbing-yr-wyddfa/" target="_blank" rel="noopener">Eryri National Park — climbing Yr Wyddfa<span>Route overview and general prep advice</span></a>
+        <a href="https://eryri.gov.wales/visit/snowdon/pen-y-pass-car-park/" target="_blank" rel="noopener">Pen y Pass parking &amp; booking<span>Only relevant if you choose the Miners'/Pyg Track</span></a>
+        <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-ground-conditions-reports/" target="_blank" rel="noopener">Yr Wyddfa ground condition reports<span>Check for ice, snow or path closures before you go</span></a>
+        <a href="https://snowdonrailway.co.uk/plan-your-visit/" target="_blank" rel="noopener">Snowdon Mountain Railway — plan your visit<span>Confirm whether it's still running that week</span></a>
+        <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-live/" target="_blank" rel="noopener">Yr Wyddfa Live<span>Live summit weather and mountain conditions</span></a>
+        <a href="https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Travel-and-parking/Sherpa-bus-service.aspx" target="_blank" rel="noopener">Sherpa’r Wyddfa bus<span>Check the latest Pen y Pass bus timetable</span></a>
+      </div>
+    </section>
+  </section>
+
+  <!-- PAGE 2: SAFETY -->
+  <section id="safety" class="page" role="tabpanel" aria-labelledby="tab-safety" tabindex="0">
+    <div class="hero">
+      <p class="eyebrow">Read this before summit day</p>
+      <h1>Mountains don't care about your itinerary</h1>
+      <p class="lede">Late October on Yr Wyddfa is a different mountain to the one in the summer photos. A bit of planning is what keeps a big group day out fun instead of frightening.</p>
+    </div>
+
+    <section class="block">
+      <div class="big-stat">
+        <div class="num">~9.5</div>
+        <div class="label">roughly how many hours of daylight you'll have on the 26th and 27th — and it gets dark fast once the sun's gone. The clocks go back the morning you arrive, so evenings close in an hour earlier than they did the week before.</div>
+      </div>
+      <p>Start walking early, agree a turnaround time before you set off, and stick to it even if the summit is close. Everyone should carry a head torch, even for a day hike — if anyone's slow, or the weather turns, you don't want to be finding it out in the dark.</p>
+    </section>
+
+    <section class="block">
+      <h2>Weather &amp; ground conditions</h2>
+      <div class="callout"><strong>Summit facilities:</strong> Hafod Eryri (the summit café and toilets) closes for the season on 25 October. For the 26 October hike, use the toilet before setting off and carry enough food and water for the full day.</div>
+      <p>The summit is routinely colder, wetter and windier than the valley floor at Llyn Gwynant — the railway’s guide says summit temperatures are frequently around 8–10°C colder than the valley, before wind chill. Check a proper mountain forecast (not just a general weather app) the night before and again on the morning, for example the Mountain Weather Information Service at <a href="https://www.mwis.org.uk/" target="_blank" rel="noopener">mwis.org.uk</a>.</p>
+      <p>Late October can bring the first frost, ice or even snow on the higher sections. Check Eryri National Park's <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-ground-conditions-reports/" target="_blank" rel="noopener">ground condition reports</a> beforehand, but note that this service is seasonal and may not yet be running in late October. If you meet ice or snow near the top and nobody has crampons, an ice axe, and experience using them, that's the turnaround point — not a reason to push on carefully.</p>
+    </section>
+
+    <section class="block">
+      <h2>Navigation</h2>
+      <p>Phone signal is patchy to non-existent on parts of the mountain, and battery drains fast in the cold. Carry a paper map (OS Explorer OL17 covers the whole area) and a compass between you, and make sure more than one person in the group can actually use them — don't rely on a phone app as your only method of finding the way.</p>
+    </section>
+
+    <section class="block">
+      <h2>Managing a group of ten</h2>
+      <ul class="plain">
+        <li>Consider splitting into a faster and a slower group, each with someone confident on navigation, rather than trying to keep ten people moving at one pace.</li>
+        <li>Agree a meeting point and time to regroup — at the summit, and back at the cars or camp.</li>
+        <li>Do a headcount at the top and again once everyone's back down. It's easy to assume someone's just behind when they're not.</li>
+        <li>Nobody walks alone, and nobody goes on ahead out of sight of the group without agreeing where to wait.</li>
+        <li>Leave your planned route and expected return time with someone staying at camp, or a friend or family member back home.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Trip details to fill in</h2>
+      <div class="cards">
+        <div class="card"><h3>Campsite</h3><p><strong>Llyn Gwynant Campsite</strong><br>Phone: <span contenteditable="true" aria-label="Campsite phone number">add number</span></p></div>
+        <div class="card"><h3>Emergency contact</h3><p>Name: <span contenteditable="true" aria-label="Emergency contact name">add name</span><br>Phone: <span contenteditable="true" aria-label="Emergency contact phone number">add number</span></p></div>
+        <div class="card"><h3>Cars &amp; keys</h3><p>Car/driver/keys location: <span contenteditable="true" aria-label="Cars and keys details">add details</span></p></div>
+      </div>
+      <p class="eyebrow">Keep these details with the group, and make sure the person holding the route plan knows the expected return time.</p>
+    </section>
+
+    <section class="block">
+      <h2>In camp</h2>
+      <p>Llyn Gwynant sits in a valley, so it stays milder than the summit, but late-October nights can still get close to freezing. Peg tents down properly for wind and rain, and keep a dry set of clothes for the evening no matter what the day's weather does.</p>
+    </section>
+
+    <section class="block">
+      <h2>If something goes wrong</h2>
+      <div class="callout">
+        <strong>Call 999 or 112, and ask for Police, then Mountain Rescue.</strong> Give your location as precisely as you can — a grid reference from your map, or a what3words address, is far more useful than "near the top."
+      </div>
+    </section>
+  </section>
+
+  <!-- PAGE 3: KIT -->
+  <section id="kit" class="page" role="tabpanel" aria-labelledby="tab-kit" tabindex="0">
+    <div class="hero">
+      <p class="eyebrow">Pack once, pack properly</p>
+      <h1>What to bring</h1>
+      <p class="lede">Split into camp gear and what each person needs in their pack on summit day. Tap an item to tick it off.</p>
+    </div>
+
+    <div class="kit-grid">
+      <div class="kit-col">
+        <h3>Camp &amp; group gear</h3>
+        <ul class="checklist">
+          <li><input type="checkbox"><span>Weatherproof tent(s), guy lines staked out for wind</span></li>
+          <li><input type="checkbox"><span>Warm sleeping bag (rated for near-freezing) &amp; sleeping mat</span></li>
+          <li><input type="checkbox"><span>Camp stove, fuel &amp; cooking gear</span></li>
+          <li><input type="checkbox"><span>Head torches + spare batteries for camp</span></li>
+          <li><input type="checkbox"><span>Portable power bank(s)</span></li>
+          <li><input type="checkbox"><span>Group first aid kit</span></li>
+          <li><input type="checkbox"><span>Dry bags for spare clothes</span></li>
+          <li><input type="checkbox"><span>Bin bags — pack out everything you bring in</span></li>
+          <li><input type="checkbox"><span>Cash/card for the campsite</span></li>
+          <li><input type="checkbox"><span>Wellies or camp shoes for around the site</span></li>
+          <li><input type="checkbox"><span>OS Explorer OL17 map &amp; compass</span></li>
+        </ul>
+      </div>
+      <div class="kit-col">
+        <h3>In your pack on summit day</h3>
+        <ul class="checklist">
+          <li><input type="checkbox"><span>Worn-in waterproof walking boots</span></li>
+          <li><input type="checkbox"><span>Waterproof jacket and trousers</span></li>
+          <li><input type="checkbox"><span>Warm mid-layer (fleece or softshell — no cotton)</span></li>
+          <li><input type="checkbox"><span>Hat and gloves</span></li>
+          <li><input type="checkbox"><span>2+ litres of water</span></li>
+          <li><input type="checkbox"><span>Packed lunch &amp; high-energy snacks</span></li>
+          <li><input type="checkbox"><span>Head torch &amp; spare batteries, even for a day hike</span></li>
+          <li><input type="checkbox"><span>Phone, fully charged, plus a power bank</span></li>
+          <li><input type="checkbox"><span>Personal first aid basics &amp; blister plasters</span></li>
+          <li><input type="checkbox"><span>Whistle</span></li>
+          <li><input type="checkbox"><span>Some cash</span></li>
+          <li><input type="checkbox"><span>A bin bag for your own rubbish</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Built for the Yr Wyddfa trip, 25–27 October 2026. Double-check parking, railway, bus, ground-condition and weather details close to the date — they change with the season.</footer>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const pages = document.querySelectorAll('.page');
+  const checklistItems = document.querySelectorAll('.checklist li');
+  const STORAGE_KEY = 'yr-wyddfa-checklist-v1';
+  function showPage(pageId, updateHash=true){
+    const target=document.getElementById(pageId); if(!target)return;
+    buttons.forEach(btn=>{const selected=btn.dataset.page===pageId; btn.classList.toggle('active',selected); btn.setAttribute('aria-selected',selected?'true':'false');});
+    pages.forEach(page=>{const active=page.id===pageId; page.classList.toggle('active',active); page.setAttribute('aria-hidden',active?'false':'true');});
+    if(updateHash) history.replaceState(null,'','#'+pageId);
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+  buttons.forEach(btn=>btn.addEventListener('click',()=>showPage(btn.dataset.page)));
+  function saveChecklist(){localStorage.setItem(STORAGE_KEY,JSON.stringify([...checklistItems].map(li=>li.querySelector('input').checked)));}
+  function loadChecklist(){let state=[]; try{state=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');}catch(_){} checklistItems.forEach((li,i)=>{const box=li.querySelector('input'); box.checked=state[i]===true; li.classList.toggle('done',box.checked);});}
+  checklistItems.forEach(li=>{const box=li.querySelector('input'); li.addEventListener('click',e=>{if(e.target!==box)box.checked=!box.checked; li.classList.toggle('done',box.checked); saveChecklist();}); box.addEventListener('change',()=>{li.classList.toggle('done',box.checked);saveChecklist();});});
+  loadChecklist();
+  const initialPage=location.hash.slice(1); showPage(document.getElementById(initialPage)?initialPage:'plan',false);
+  window.addEventListener('hashchange',()=>{const pageId=location.hash.slice(1);if(document.getElementById(pageId))showPage(pageId,false);});
+</script>
+
+</body>
+</html>
