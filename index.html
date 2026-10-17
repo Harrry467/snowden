@@ -1,418 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yr Wyddfa · 25–27 Oct</title>
-<meta name="description" content="Group camping and Yr Wyddfa summit plan for 25–27 October 2026, including routes, safety, weather checks and packing checklist.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowdon weekend, 25 to 27 October</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#EFEAE0;
-    --card:#F8F5EE;
-    --ink:#20261D;
-    --pine:#2C3B2E;
-    --pine-dark:#171F18;
-    --slate:#5B6560;
-    --rust:#AD5127;
-    --rust-light:#E9D3C4;
-    --heather:#5F5169;
-    --heather-light:#E3DCE6;
-    --line:#D8D0BE;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    margin:0 0 .4em 0;
-    color:var(--pine-dark);
-  }
-  a{color:var(--rust);}
-  p{margin:0 0 1em 0;}
-  .topbar{
-    position:sticky; top:0; z-index:20;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:12px;
-    background:var(--pine);
-    color:var(--paper);
-    padding:16px 28px;
-    border-bottom:3px solid var(--pine-dark);
-  }
-  .brand{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600;}
-  .brand span{font-weight:400; opacity:.75; font-size:.95rem; margin-left:8px;}
-  nav{display:flex; gap:6px;}
-  nav button{
-    font-family:'Work Sans', sans-serif;
-    font-size:.92rem;
-    background:transparent;
-    border:1px solid rgba(239,234,224,.35);
-    color:var(--paper);
-    padding:8px 16px;
-    border-radius:999px;
-    cursor:pointer;
-    transition:background .15s ease, color .15s ease;
-  }
-  nav button:hover{background:rgba(239,234,224,.12);}
-  nav button.active{background:var(--rust); border-color:var(--rust); color:#fff;}
+:root{
+  --bg:#e8eded; --surface:#f5f8f8; --ink:#1c2a30; --muted:#4f646b;
+  --slate:#22343b; --hero-ink:#eef4f3; --lake:#2b6e73; --heather:#7a4a86; --line:#c3d0d2;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#131c20;--surface:#1b272c;--ink:#e3ebeb;--muted:#9db0b4;--slate:#0e1619;--lake:#6cc0c3;--heather:#c99bd4;--line:#2c3d43;color-scheme:dark}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--body)}
+:focus-visible{outline:3px solid var(--heather);outline-offset:3px;border-radius:4px}
+body{--on:#fff}
+@media (prefers-color-scheme:dark){body{--on:#0e1619}}
+.tab-radio{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.page{display:none}
+#t-sunday:checked~main #sunday,#t-monday:checked~main #monday,#t-tuesday:checked~main #tuesday{display:grid}
+#t-group:checked~main #group,#t-individual:checked~main #individual{display:block}
 
-  main{max-width:880px; margin:0 auto; padding:0 24px 80px;}
-  .page{display:none; animation:fade .35s ease;}
-  .page.active{display:block;}
-  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+.hero{background:var(--slate);color:var(--hero-ink);padding:2.4rem 1.25rem 0}
+.hero-in{max-width:56rem;margin:0 auto}
+.hero h1{font:800 clamp(2.2rem,8vw,3.8rem)/1 var(--head);margin:0 0 .5rem;letter-spacing:-.02em}
+.hero p{margin:0;max-width:34rem;font-size:1.1rem;opacity:.88}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin:1.2rem 0 0;padding:0;list-style:none}
+.facts li{border:1px solid rgba(238,244,243,.35);border-radius:999px;padding:.25rem .8rem;font-size:.92rem}
+.ridge{display:block;width:100%;height:auto;margin-top:1.6rem;fill:var(--bg)}
 
-  .hero{
-    padding:56px 0 40px;
-    position:relative;
-    border-bottom:1px solid var(--line);
-    margin-bottom:36px;
-  }
-  .hero .eyebrow{color:var(--slate); font-size:.95rem;}
-  .hero h1{font-size:2.6rem; line-height:1.08; max-width:11ch;}
-  .hero p.lede{font-size:1.1rem; max-width:52ch; color:var(--slate);}
-  .contour{position:absolute; right:-10px; top:10px; width:220px; opacity:.5; pointer-events:none;}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav ul{display:flex;gap:.4rem;max-width:56rem;margin:0 auto;padding:.6rem 1.25rem;list-style:none;overflow-x:auto}
+nav label{display:block;cursor:pointer;white-space:nowrap;color:var(--muted);padding:.35rem .9rem;border-radius:999px;font-weight:500;font-size:.95rem}
+nav label:hover{background:var(--surface);color:var(--ink)}
+#t-sunday:checked~nav [for=t-sunday],#t-monday:checked~nav [for=t-monday],#t-tuesday:checked~nav [for=t-tuesday],#t-group:checked~nav [for=t-group],#t-individual:checked~nav [for=t-individual]{background:var(--lake);color:var(--on)}
+#t-sunday:focus-visible~nav [for=t-sunday],#t-monday:focus-visible~nav [for=t-monday],#t-tuesday:focus-visible~nav [for=t-tuesday],#t-group:focus-visible~nav [for=t-group],#t-individual:focus-visible~nav [for=t-individual]{outline:3px solid var(--heather);outline-offset:2px}
 
-  .big-stat{
-    display:flex; align-items:baseline; gap:14px; margin:18px 0 8px;
-    flex-wrap:wrap;
-  }
-  .big-stat .num{font-family:'Fraunces', serif; font-size:3.4rem; font-weight:600; color:var(--rust); line-height:1;}
-  .big-stat .label{font-size:1.05rem; color:var(--ink); max-width:34ch;}
+main{max-width:56rem;margin:0 auto;padding:0 1.25rem 4rem}
+h2{font:600 1.7rem/1.15 var(--head);margin:0 0 .9rem;letter-spacing:-.01em}
+h3{font:600 1.1rem/1.3 var(--head);margin:0 0 .5rem}
+.count{color:var(--muted);font:400 .95rem var(--body)}
 
-  .timeline{list-style:none; margin:0; padding:0;}
-  .timeline li{
-    display:grid; grid-template-columns:64px 1fr; gap:18px;
-    padding:22px 0; border-top:1px solid var(--line);
-  }
-  .timeline li:first-child{border-top:none;}
-  .daynum{font-family:'Fraunces', serif; font-size:1.8rem; color:var(--slate); font-weight:500;}
-  .timeline h3{margin-bottom:.25em; font-size:1.2rem;}
-  .timeline .date{color:var(--slate); font-size:.9rem; margin-bottom:.5em;}
+.day{grid-template-columns:7.5rem 1fr;gap:1.5rem;padding:2.4rem 0}
+.when{display:flex;flex-direction:column;line-height:1}
+.dow,.mon{font-size:.95rem;color:var(--muted)}
+.dow{margin-bottom:.35rem}.mon{margin-top:.35rem}
+.date{font:800 3.6rem/.9 var(--head);color:var(--lake)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:8.2rem 1fr;gap:.9rem;padding:.65rem 0;border-top:1px solid var(--line)}
+.rows li:first-child{border-top:0;padding-top:0}
+.t{font-weight:600}
+.note{border-left:4px solid var(--heather);background:var(--surface);padding:.75rem 1rem;border-radius:0 8px 8px 0;margin:1rem 0 0}
+.note b{display:block}
+.link{margin:1.4rem 0 0}.link label{color:var(--lake);font-weight:600;text-decoration:underline;cursor:pointer}
 
-  .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin:28px 0;}
-  .card{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:20px 20px 22px;
-  }
-  .card h3{font-size:1.1rem; margin-bottom:.15em;}
-  .card .tag{
-    display:inline-block; font-size:.8rem; padding:2px 10px; border-radius:999px;
-    background:var(--rust-light); color:#7D3518; margin-bottom:10px;
-  }
-  .card dl{margin:12px 0 0; font-size:.92rem;}
-  .card dt{color:var(--slate); float:left; width:78px; clear:left;}
-  .card dd{margin:0 0 6px 78px;}
+.daybar{position:relative;height:98px;margin:1.6rem 0 .6rem}
+.track{position:absolute;top:36px;left:0;right:0;height:14px;border-radius:7px;background:var(--line)}
+.light{position:absolute;top:0;bottom:0;left:8.6%;width:82.5%;background:var(--lake);opacity:.4;border-radius:7px}
+.pin{position:absolute;top:28px;width:4px;height:30px;border-radius:2px;background:var(--heather)}
+.lbl{position:absolute;font-size:.85rem;line-height:1.25;white-space:nowrap}
+.lbl.top{top:0}.lbl.bot{top:66px}
+.axis{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}
 
-  section.block{margin:40px 0;}
-  section.block h2{font-size:1.5rem; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:16px;}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.panel p,.panel ul{margin:0}.panel ul{padding-left:1.1rem}
+.facts-list{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem}
+.facts-list dt{font-weight:600}.facts-list dd{margin:0}
 
-  .callout{
-    background:var(--heather-light); border-left:4px solid var(--heather);
-    padding:16px 20px; border-radius:0 8px 8px 0; margin:20px 0;
-  }
-  .callout strong{color:var(--pine-dark);}
+.block{padding:2.4rem 0;border-bottom:1px solid var(--line)}
+.block:last-child{border-bottom:0}
+.block>p.lede{margin:0 0 1rem;color:var(--muted);max-width:40rem}
 
-  ul.plain{padding-left:1.2em; margin:0 0 1em;}
-  ul.plain li{margin-bottom:.4em;}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr));gap:.6rem}
+.checks label{display:flex;gap:.8rem;align-items:flex-start;height:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;cursor:pointer}
+.checks input{width:1.3rem;height:1.3rem;margin:.1rem 0 0;accent-color:var(--lake);flex:none}
+.checks input:checked+span{text-decoration:line-through;color:var(--muted)}
+.checks small{display:block;color:var(--muted);font-size:.9rem}
 
-  .links{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
-  .links a{
-    display:block; padding:12px 16px; background:var(--card); border:1px solid var(--line);
-    border-radius:8px; text-decoration:none; color:var(--ink); font-size:.95rem;
-  }
-  .links a span{display:block; color:var(--rust); font-size:.82rem; margin-top:2px;}
-
-  .kit-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:8px;}
-  @media (max-width:640px){.kit-grid{grid-template-columns:1fr;} .hero .contour{display:none;} .card dt{width:70px;} .card dd{margin-left:70px;}}
-  .kit-col h3{font-size:1.15rem; margin-bottom:12px;}
-  .checklist{list-style:none; margin:0; padding:0;}
-  .checklist li{
-    display:flex; align-items:flex-start; gap:10px; padding:9px 0;
-    border-top:1px solid var(--line); cursor:pointer; user-select:none;
-  }
-  .checklist li:first-child{border-top:none;}
-  .checklist input{margin-top:4px; accent-color:var(--rust); width:16px; height:16px; flex:none;}
-  .checklist li.done span{text-decoration:line-through; color:var(--slate);}
-
-  footer{max-width:880px; margin:0 auto; padding:20px 24px 60px; color:var(--slate); font-size:.85rem;}
-
-  @media print{
-    @page{margin:1.5cm;}
-    *{animation:none !important; transition:none !important;}
-    body{background:#fff; color:#000;}
-    .topbar{position:static; background:#fff; color:#000; border-bottom:1px solid #999;}
-    .brand span{color:#444;} nav{display:none;}
-    main{max-width:none; padding:0;} .page{display:block !important; animation:none;}
-    .hero{padding:28px 0 20px; margin-bottom:20px;} .hero .contour{display:none;}
-    .card,.links a,.callout{break-inside:avoid; background:#fff;}
-    .links a{color:#000;} .links a span{color:#333;}
-    footer{max-width:none; padding:20px 0;} .checklist li{break-inside:avoid;}
-  }
-
-  .hero .eyebrow{font-weight:600; letter-spacing:.02em;}
-  .hero h1{max-width:15ch;}
-  .callout{box-shadow:0 2px 10px rgba(32,38,29,.04);}
-  .card{box-shadow:0 2px 8px rgba(32,38,29,.035); transition:transform .15s ease, box-shadow .15s ease;}
-  .card:hover{transform:translateY(-2px); box-shadow:0 5px 16px rgba(32,38,29,.07);}
-  .links a{transition:transform .15s ease, border-color .15s ease;}
-  .links a:hover{transform:translateX(2px); border-color:var(--rust);}
-  .checklist li{border-radius:6px; padding-left:6px; padding-right:6px;}
-  .checklist li:hover{background:rgba(216,208,190,.22);}
-  .eyebrow{letter-spacing:.01em;}
-
+@media (max-width:640px){
+  .day{grid-template-columns:1fr;gap:.9rem;padding:1.8rem 0}
+  .when{flex-direction:row;align-items:baseline;gap:.6rem}
+  .dow,.mon{margin:0;font-size:1rem}.date{font-size:2.6rem}
+  .rows li{grid-template-columns:1fr;gap:.1rem}
+  .pair{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<input class="tab-radio" type="radio" name="tab" id="t-sunday" aria-label="Sunday" checked>
+<input class="tab-radio" type="radio" name="tab" id="t-monday" aria-label="Monday">
+<input class="tab-radio" type="radio" name="tab" id="t-tuesday" aria-label="Tuesday">
+<input class="tab-radio" type="radio" name="tab" id="t-group" aria-label="Group">
+<input class="tab-radio" type="radio" name="tab" id="t-individual" aria-label="Individual needs">
 
-<header class="topbar">
-  <div class="brand">Yr Wyddfa<span>Llyn Gwynant · 25–27 Oct 2026</span></div>
-  <nav role="tablist" aria-label="Trip sections">
-    <button id="tab-plan" data-page="plan" class="active" type="button" role="tab" aria-selected="true" aria-controls="plan">The plan</button>
-    <button id="tab-safety" data-page="safety" type="button" role="tab" aria-selected="false" aria-controls="safety">Safety</button>
-    <button id="tab-kit" data-page="kit" type="button" role="tab" aria-selected="false" aria-controls="kit">What to bring</button>
-  </nav>
+<header class="hero" id="top">
+  <div class="hero-in">
+    <h1>Snowdon weekend</h1>
+    <p>Up Yr Wyddfa by the Watkin Path, camping at Llyn Gwynant, home by train from Bangor.</p>
+    <ul class="facts"><li>Sunday 25 to Tuesday 27 October</li><li>11 people</li><li>Two cars</li></ul>
+  </div>
+  <svg class="ridge" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 120V92L52 74l44 12 58-38 40 14 62-52 36 28 46-20 58 46 44-10 60 28 40-8 60 26v32z"/>
+  </svg>
 </header>
+
+<nav aria-label="Pages">
+  <ul>
+    <li><label for="t-sunday">Sunday</label></li>
+    <li><label for="t-monday">Monday</label></li>
+    <li><label for="t-tuesday">Tuesday</label></li>
+    <li><label for="t-group">Group</label></li>
+    <li><label for="t-individual">Individual needs</label></li>
+  </ul>
+</nav>
 
 <main>
 
-  <!-- PAGE 1: PLAN -->
-  <section id="plan" class="page active" role="tabpanel" aria-labelledby="tab-plan" tabindex="0">
-    <div class="hero">
-      <svg class="contour" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#2C3B2E" stroke-width="1.2">
-          <path d="M10 120 Q 60 40 100 60 T 190 100"/>
-          <path d="M20 130 Q 65 60 105 78 T 195 115"/>
-          <path d="M35 138 Q 70 80 110 95 T 198 128"/>
-        </g>
-      </svg>
-      <p class="eyebrow">A weekend of hiking, camping &amp; good company</p>
-      <h1>Three days at Yr Wyddfa</h1>
-      <p class="lede">Camping at Llyn Gwynant, with a summit day, good food and plenty of time to enjoy the mountains.</p>
+  <article class="page day" id="sunday">
+    <div class="when"><span class="dow">Sunday</span><span class="date">25</span><span class="mon">October</span></div>
+    <div>
+      <h2>Drive up and have a barbecue</h2>
+      <ul class="rows">
+        <li><span class="t">Leave</span><span>Harry and Cieran each choose the leave time for their own car.</span></li>
+        <li><span class="t">From 3pm</span><span>Check in at the campsite.</span></li>
+        <li><span class="t">After check-in</span><span>We will go swimming in the campsite lake at Llyn Gwynant, with options to rent paddleboards and more.</span></li>
+        <li><span class="t">Evening</span><span>Dinner is a BBQ.</span></li>
+      </ul>
+      <p class="link">Cars, tents and food are on the <label for="t-group">Group page</label>.</p>
     </div>
+  </article>
 
-    <ol class="timeline">
-      <li>
-        <div class="daynum">1</div>
-        <div>
-          <div class="date">Sunday 25 October</div>
-          <h3>Arrive &amp; set up camp</h3>
-          <p>Aim to reach Llyn Gwynant with enough daylight to pitch tents and settle in. The clocks go back that night, so we'll have an earlier sunset than we're used to. Then it's a relaxed first evening: food at camp, or a short walk to the Pen y Gwryd Hotel if anyone fancies a pub.</p>
-        </div>
-      </li>
-      <li>
-        <div class="daynum">2</div>
-        <div>
-          <div class="date">Monday 26 October</div>
-          <h3>Summit day</h3>
-          <p>The big day. Start early — see the route options below — and leave ourselves plenty of time to enjoy the walk without rushing. With ten people, we'll naturally move at a group pace. Back at camp for a hot meal and a well-earned rest.</p>
-        </div>
-      </li>
-      <li>
-        <div class="daynum">3</div>
-        <div>
-          <div class="date">Tuesday 27 October</div>
-          <h3>Pack down &amp; head home</h3>
-          <p>A shorter day: strike camp, do a last check for litter and gear left behind, and head off. If legs allow, Beddgelert or Llyn Dinas make for a gentle, flat stroll before the drive home.</p>
-        </div>
-      </li>
-    </ol>
+  <article class="page day" id="monday">
+    <div class="when"><span class="dow">Monday</span><span class="date">26</span><span class="mon">October</span></div>
+    <div>
+      <h2>Summit day on the Watkin Path</h2>
+      <ul class="rows">
+        <li><span class="t">6:00 to 6:15am</span><span>Wake up.</span></li>
+        <li><span class="t">Before 7:15am</span><span>Breakfast of egg and bacon rolls. The bacon is in the cool box.</span></li>
+        <li><span class="t">7:15am</span><span>Start the walk up the Watkin Path.</span></li>
+        <li><span class="t">About 11am</span><span>Summit.</span></li>
+        <li><span class="t">On the hill</span><span>Lunch is the food you carry (see below).</span></li>
+        <li><span class="t">Evening</span><span>Dinner is a Chinese from the local town, brought back by Cieran, or pizza on the campsite.</span></li>
+      </ul>
 
-    <section class="block">
-      <h2>Getting to the top: three route options</h2>
-      <p>All six paths up Yr Wyddfa are officially graded Hard or Strenuous by Eryri National Park. They're proper mountain days, but with a sensible route choice and good preparation, there's plenty to look forward to. With ten of us, it's worth agreeing on one route as a group before setting off.</p>
-      <div class="cards">
-        <div class="card">
-          <span class="tag">Closest to camp</span>
-          <h3>Watkin Path</h3>
-          <dl>
-            <dt>Starts</dt><dd>Pont Bethania car park, a short drive or walk from Llyn Gwynant</dd>
-            <dt>Distance</dt><dd>~8 miles round trip</dd>
-            <dt>Ascent</dt><dd>~1,015m</dd>
-            <dt>Time</dt><dd>6–7 hours</dd>
-          </dl>
-          <p style="margin-top:10px;">A beautiful, varied route with some steep and rocky sections, particularly higher up. It's convenient from camp, which makes the logistics nice and simple.</p>
+      <div class="daybar" role="img" aria-label="Daylight runs from 7:02am to 4:56pm. The walk starts at 7:15am and reaches the summit at about 11am.">
+        <span class="lbl top" style="left:8.6%">Light from 7:02am</span>
+        <span class="lbl top" style="right:8.9%">Dark at 4:56pm</span>
+        <div class="track"><div class="light"></div></div>
+        <span class="pin" style="left:10.4%"></span>
+        <span class="pin" style="left:41.7%"></span>
+        <span class="lbl bot" style="left:10.4%">Start 7:15am</span>
+        <span class="lbl bot" style="left:41.7%;margin-left:6px">Summit about 11am</span>
+      </div>
+      <div class="axis" aria-hidden="true"><span>6am</span><span>12pm</span><span>6pm</span></div>
+
+      <div class="pair">
+        <div class="panel">
+          <h3>Water and food</h3>
+          <p>Recommendations are:</p>
+          <ul>
+            <li>At least 2L of water each, and some will want extra.</li>
+            <li>Food: nuts, sandwiches, crisps, cereal bars, bananas, apples and chocolate.</li>
+          </ul>
         </div>
-        <div class="card">
-          <span class="tag">Shortest</span>
-          <h3>Miners' / Pyg Track</h3>
-          <dl>
-            <dt>Starts</dt><dd>Pen y Pass (needs pre-booked parking, or the Sherpa'r Wyddfa bus)</dd>
-            <dt>Distance</dt><dd>~7 miles round trip</dd>
-            <dt>Ascent</dt><dd>~700–740m</dd>
-            <dt>Time</dt><dd>5–6 hours</dd>
-          </dl>
-          <p style="margin-top:10px;">A very popular choice with a small car park, so plan parking or the bus ahead of time. It's shorter than the Watkin Path, with some steep sections and great mountain scenery.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Gentlest gradient</span>
-          <h3>Llanberis Path</h3>
-          <dl>
-            <dt>Starts</dt><dd>Llanberis village, ~25 minutes' drive away</dd>
-            <dt>Distance</dt><dd>~9 miles round trip</dd>
-            <dt>Ascent</dt><dd>~950m</dd>
-            <dt>Time</dt><dd>5–7 hours</dd>
-          </dl>
-          <p style="margin-top:10px;">The longest option, but with a gentler gradient for much of the way and a straightforward line to follow. A good option if the group wants a steadier pace.</p>
+        <div class="panel">
+          <h3>Maps and medical</h3>
+          <ul>
+            <li>Harry, Ben and Cieran download the guide map on their phones.</li>
+            <li>Harry brings a first aid kit.</li>
+          </ul>
         </div>
       </div>
-      <div class="callout">
-        <strong>About the railway:</strong> The railway is worth checking before the trip, as its seasonal timetable can change. Hafod Eryri (the summit café and toilets) is scheduled to close for the season on 25 October, so for our summit day on the 26th we'll plan to be self-sufficient and check the latest railway information before travelling.
-      </div>
-    </section>
-
-    <section class="block">
-      <h2>Useful links</h2>
-      <div class="links">
-        <a href="https://eryri.gov.wales/visit/snowdon/climbing-yr-wyddfa/" target="_blank" rel="noopener">Eryri National Park — climbing Yr Wyddfa<span>Route overview and general prep advice</span></a>
-        <a href="https://eryri.gov.wales/visit/snowdon/pen-y-pass-car-park/" target="_blank" rel="noopener">Pen y Pass parking &amp; booking<span>Only relevant if you choose the Miners'/Pyg Track</span></a>
-        <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-ground-conditions-reports/" target="_blank" rel="noopener">Yr Wyddfa ground condition reports<span>Check for ice, snow or path closures before you go</span></a>
-        <a href="https://snowdonrailway.co.uk/plan-your-visit/" target="_blank" rel="noopener">Snowdon Mountain Railway — plan your visit<span>Confirm whether it's still running that week</span></a>
-        <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-live/" target="_blank" rel="noopener">Yr Wyddfa Live<span>Live summit weather and mountain conditions</span></a>
-        <a href="https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Travel-and-parking/Sherpa-bus-service.aspx" target="_blank" rel="noopener">Sherpa’r Wyddfa bus<span>Check the latest Pen y Pass bus timetable</span></a>
-      </div>
-    </section>
-  </section>
-
-  <!-- PAGE 2: SAFETY -->
-  <section id="safety" class="page" role="tabpanel" aria-labelledby="tab-safety" tabindex="0">
-    <div class="hero">
-      <p class="eyebrow">Read this before summit day</p>
-      <h1>Make the most of the mountain</h1>
-      <p class="lede">Late October can bring crisp, changeable mountain weather, so a little preparation helps us make the most of the day. The aim is simple: enjoy the walk, look after each other and have a great weekend.</p>
     </div>
+  </article>
 
+  <article class="page day" id="tuesday">
+    <div class="when"><span class="dow">Tuesday</span><span class="date">27</span><span class="mon">October</span></div>
+    <div>
+      <h2>Breakfast, Bangor and the train home</h2>
+      <ul class="rows">
+        <li><span class="t">From 9am</span><span>Breakfast from the campsite shop, which opens at 9am. Probably egg and bacon rolls.</span></li>
+        <li><span class="t">Around 12</span><span>The taxi leaves camp. It is one 6-person taxi to Bangor station, with the price split.</span></li>
+        <li><span class="t">Cieran’s car</span><span>Cieran drives home with his four.</span></li>
+        <li><span class="t">Lunch</span><span>In Bangor.</span></li>
+        <li><span class="t">3:15pm</span><span>Train from Bangor to Euston.</span></li>
+      </ul>
+      <p class="note"><b>Buy the train tickets</b>The 3:15pm Bangor to Euston needs tickets booked before the trip.</p>
+    </div>
+  </article>
+
+  <article class="page" id="group">
     <section class="block">
-      <div class="big-stat">
-        <div class="num">~9.5</div>
-        <div class="label">roughly how many hours of daylight you'll have on the 26th and 27th. The clocks go back on arrival day, so we'll have an earlier sunset — another good reason to make an early start on summit day.</div>
+      <h2>Who is in which car</h2>
+      <div class="pair">
+        <div class="panel">
+          <h3>Cieran’s car <span class="count">4 people</span></h3>
+          <ul><li>Cieran</li><li>Jones</li><li>Gus</li><li>Ben</li></ul>
+        </div>
+        <div class="panel">
+          <h3>Harry’s car <span class="count">7 people</span></h3>
+          <ul><li>Harry</li><li>Carlton</li><li>Anna</li><li>Elsa</li><li>Aura</li><li>Milli</li><li>Jasper</li></ul>
+        </div>
       </div>
-      <p>Start walking early, agree a turnaround time before you set off, and stick to it even if the summit is close. Everyone should carry a head torch, even for a day hike — if anyone's slow, or the weather turns, you don't want to be finding it out in the dark.</p>
     </section>
 
     <section class="block">
-      <h2>Weather &amp; ground conditions</h2>
-      <div class="callout"><strong>Summit facilities:</strong> Hafod Eryri (the summit café and toilets) closes for the season on 25 October. For the 26 October hike, use the toilet before setting off and carry enough food and water for the full day.</div>
-      <p>The summit is usually colder, wetter and windier than the valley floor at Llyn Gwynant — the railway’s guide says summit temperatures are frequently around 8–10°C colder than the valley, before wind chill. Bring layers so you're comfortable if conditions change. Check a proper mountain forecast (not just a general weather app) the night before and again on the morning, for example the Mountain Weather Information Service at <a href="https://www.mwis.org.uk/" target="_blank" rel="noopener">mwis.org.uk</a>.</p>
-      <p>Late October can bring frost, ice or occasionally snow on the higher sections. Check Eryri National Park's <a href="https://eryri.gov.wales/visit/snowdon/yr-wyddfa-ground-conditions-reports/" target="_blank" rel="noopener">ground condition reports</a> beforehand, but note that this service is seasonal and may not yet be running in late October. If conditions become more wintry than the group is equipped or experienced for, that's a good point to turn around and save the summit for another day.</p>
+      <h2>Tents</h2>
+      <div class="panel">
+        <dl class="facts-list">
+          <dt>Harry</dt><dd>A few 2-man and 3-man tents.</dd>
+          <dt>Ben</dt><dd>One 8-man tent.</dd>
+        </dl>
+      </div>
+      <p class="note"><b>Still wanted</b>Harry could use some bigger tents. Does anyone have any other tents?</p>
+      <p style="margin:1rem 0 0">We will sort out who goes in which tent when we get there.</p>
     </section>
 
     <section class="block">
-      <h2>Navigation</h2>
-      <p>Phone signal can be patchy on the mountain, so it's smart to have a paper map (OS Explorer OL17 covers the whole area) and a compass with the group. Make sure more than one person is comfortable using them, while keeping phones charged as a useful extra.</p>
-    </section>
-
-    <section class="block">
-      <h2>Making a group of ten work</h2>
-      <ul class="plain">
-        <li>If natural pace differences emerge, consider two small groups, each with someone confident on navigation, with a clear plan for regrouping.</li>
-        <li>Agree a meeting point and time to regroup — at the summit, and back at the cars or camp.</li>
-        <li>Do a quick headcount at the top and again once everyone's back down.</li>
-        <li>Stick together where practical, and agree a simple plan if people naturally spread out.</li>
-        <li>Leave your planned route and expected return time with someone staying at camp, or a friend or family member back home.</li>
+      <h2>Food, drink and BBQ</h2>
+      <ul class="checks">
+        <li><label><input type="checkbox"><span>Bread rolls</span></label></li>
+        <li><label><input type="checkbox"><span>Bacon<small>Goes in the cool box.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Hot dogs</span></label></li>
+        <li><label><input type="checkbox"><span>Burgers</span></label></li>
+        <li><label><input type="checkbox"><span>Hot dog rolls</span></label></li>
+        <li><label><input type="checkbox"><span>BBQ bits</span></label></li>
+        <li><label><input type="checkbox"><span>BBQ<small>Could rent this.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Stove<small>Harry has some but could use more.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Cooking utensils</span></label></li>
+        <li><label><input type="checkbox"><span>Cool box</span></label></li>
+        <li><label><input type="checkbox"><span>Ice for the cool box</span></label></li>
+        <li><label><input type="checkbox"><span>A pack of water</span></label></li>
+        <li><label><input type="checkbox"><span>A pack of Coke</span></label></li>
+        <li><label><input type="checkbox"><span>Biscuits</span></label></li>
       </ul>
     </section>
 
     <section class="block">
-      <h2>Trip details to fill in</h2>
-      <div class="cards">
-        <div class="card"><h3>Campsite</h3><p><strong>Llyn Gwynant Campsite</strong><br>Phone: <span contenteditable="true" aria-label="Campsite phone number">add number</span></p></div>
-        <div class="card"><h3>Emergency contact</h3><p>Name: <span contenteditable="true" aria-label="Emergency contact name">add name</span><br>Phone: <span contenteditable="true" aria-label="Emergency contact phone number">add number</span></p></div>
-        <div class="card"><h3>Cars &amp; keys</h3><p>Car/driver/keys location: <span contenteditable="true" aria-label="Cars and keys details">add details</span></p></div>
-      </div>
-      <p class="eyebrow">Keep these details with the group, and make sure the person holding the route plan knows the expected return time.</p>
+      <h2>Medicine</h2>
+      <div class="panel"><p>Harry will bring a first aid kit.</p></div>
+    </section>
+  </article>
+
+  <article class="page" id="individual">
+    <section class="block">
+      <h2>Individual needs</h2>
+      <p class="lede">What each person brings for themselves. Ticks are saved on your own phone only.</p>
     </section>
 
     <section class="block">
-      <h2>In camp</h2>
-      <p>Llyn Gwynant sits in a sheltered valley, but late-October evenings can still feel chilly. Peg tents down well for comfort in wind and rain, and keep a dry set of clothes for a cosy evening around camp.</p>
+      <h3>Sleeping</h3>
+      <ul class="checks">
+        <li><label><input type="checkbox"><span>Sleeping bag<small>Warm enough for a late October night.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Roll mat or airbed</span></label></li>
+        <li><label><input type="checkbox"><span>Pillow</span></label></li>
+      </ul>
     </section>
 
     <section class="block">
-      <h2>If we need help</h2>
-      <div class="callout">
-        <strong>Call 999 or 112, and ask for Police, then Mountain Rescue.</strong> Give your location as precisely as you can — a grid reference from your map, or a what3words address, is far more useful than "near the top."
-      </div>
+      <h3>Monday on the mountain</h3>
+      <ul class="checks">
+        <li><label><input type="checkbox"><span>Walking boots</span></label></li>
+        <li><label><input type="checkbox"><span>Waterproof jacket and trousers</span></label></li>
+        <li><label><input type="checkbox"><span>Warm layers<small>A fleece or similar.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Hat and gloves</span></label></li>
+        <li><label><input type="checkbox"><span>Day rucksack</span></label></li>
+        <li><label><input type="checkbox"><span>Torch<small>It’s dark by 4:56pm.</small></span></label></li>
+        <li><label><input type="checkbox"><span>2L of water or more</span></label></li>
+        <li><label><input type="checkbox"><span>Food for the hill<small>Recommendations are: nuts, sandwiches, crisps, cereal bars, bananas, apples, chocolate.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Phone, charged, plus a power bank</span></label></li>
+      </ul>
     </section>
-  </section>
 
-  <!-- PAGE 3: KIT -->
-  <section id="kit" class="page" role="tabpanel" aria-labelledby="tab-kit" tabindex="0">
-    <div class="hero">
-      <p class="eyebrow">Pack for a comfortable day</p>
-      <h1>What to bring</h1>
-      <p class="lede">Everything is split into shared camp gear and each person's summit-day pack. Tick things off as you go.</p>
-    </div>
+    <section class="block">
+      <h3>At the campsite</h3>
+      <ul class="checks">
+        <li><label><input type="checkbox"><span>Warm clothes for the evenings</span></label></li>
+        <li><label><input type="checkbox"><span>Trainers or sliders</span></label></li>
+        <li><label><input type="checkbox"><span>Swimming costume<small>For the lake on Sunday.</small></span></label></li>
+        <li><label><input type="checkbox"><span>A plate, a cup, a knife, fork and spoon</span></label></li>
+        <li><label><input type="checkbox"><span>Towel and wash bag</span></label></li>
+        <li><label><input type="checkbox"><span>Bin bags for wet kit</span></label></li>
+        <li><label><input type="checkbox"><span>Cash or card<small>Campsite shop, pizza and the taxi.</small></span></label></li>
+      </ul>
+    </section>
 
-    <div class="kit-grid">
-      <div class="kit-col">
-        <h3>Camp &amp; group gear</h3>
-        <ul class="checklist">
-          <li><input type="checkbox"><span>Weatherproof tent(s), guy lines staked out for wind</span></li>
-          <li><input type="checkbox"><span>Warm sleeping bag &amp; sleeping mat suitable for a chilly October night</span></li>
-          <li><input type="checkbox"><span>Camp stove, fuel &amp; cooking gear</span></li>
-          <li><input type="checkbox"><span>Head torches + spare batteries for camp</span></li>
-          <li><input type="checkbox"><span>Portable power bank(s)</span></li>
-          <li><input type="checkbox"><span>Group first aid kit</span></li>
-          <li><input type="checkbox"><span>Dry bags for spare clothes</span></li>
-          <li><input type="checkbox"><span>Bin bags — pack out everything you bring in</span></li>
-          <li><input type="checkbox"><span>Cash/card for the campsite</span></li>
-          <li><input type="checkbox"><span>Wellies or camp shoes for around the site</span></li>
-          <li><input type="checkbox"><span>OS Explorer OL17 map &amp; compass</span></li>
-        </ul>
-      </div>
-      <div class="kit-col">
-        <h3>In your pack on summit day</h3>
-        <ul class="checklist">
-          <li><input type="checkbox"><span>Comfortable, worn-in walking boots</span></li>
-          <li><input type="checkbox"><span>Waterproof jacket and trousers</span></li>
-          <li><input type="checkbox"><span>Warm mid-layer (fleece or softshell — no cotton)</span></li>
-          <li><input type="checkbox"><span>Hat and gloves</span></li>
-          <li><input type="checkbox"><span>Enough water for the full walk (around 2 litres is a useful guide)</span></li>
-          <li><input type="checkbox"><span>Packed lunch &amp; high-energy snacks</span></li>
-          <li><input type="checkbox"><span>Head torch &amp; spare batteries, even for a day hike</span></li>
-          <li><input type="checkbox"><span>Phone, fully charged, plus a power bank</span></li>
-          <li><input type="checkbox"><span>Personal first aid basics &amp; blister plasters</span></li>
-          <li><input type="checkbox"><span>Whistle</span></li>
-          <li><input type="checkbox"><span>Some cash</span></li>
-          <li><input type="checkbox"><span>A small bin bag for your own rubbish</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <section class="block">
+      <h3>Getting home</h3>
+      <ul class="checks">
+        <li><label><input type="checkbox"><span>Clean clothes for Tuesday</span></label></li>
+        <li><label><input type="checkbox"><span>Train ticket<small>3:15pm Bangor to Euston.</small></span></label></li>
+        <li><label><input type="checkbox"><span>Phone charger</span></label></li>
+        <li><label><input type="checkbox"><span>Any personal medication</span></label></li>
+      </ul>
+    </section>
+  </article>
 
 </main>
 
-<footer>Built for the Yr Wyddfa trip, 25–27 October 2026. A few details are seasonal, so we'll do a final check of parking, transport, ground conditions and weather shortly before the trip.</footer>
-
 <script>
-  const buttons = document.querySelectorAll('nav button');
-  const pages = document.querySelectorAll('.page');
-  const checklistItems = document.querySelectorAll('.checklist li');
-  const STORAGE_KEY = 'yr-wyddfa-checklist-v1';
-  function showPage(pageId, updateHash=true){
-    const target=document.getElementById(pageId); if(!target)return;
-    buttons.forEach(btn=>{const selected=btn.dataset.page===pageId; btn.classList.toggle('active',selected); btn.setAttribute('aria-selected',selected?'true':'false');});
-    pages.forEach(page=>{const active=page.id===pageId; page.classList.toggle('active',active); page.setAttribute('aria-hidden',active?'false':'true');});
-    if(updateHash) history.replaceState(null,'','#'+pageId);
-    window.scrollTo({top:0,behavior:'auto'});
-  }
-  buttons.forEach(btn=>btn.addEventListener('click',()=>showPage(btn.dataset.page)));
-  function saveChecklist(){localStorage.setItem(STORAGE_KEY,JSON.stringify([...checklistItems].map(li=>li.querySelector('input').checked)));}
-  function loadChecklist(){let state=[]; try{state=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');}catch(_){} checklistItems.forEach((li,i)=>{const box=li.querySelector('input'); box.checked=state[i]===true; li.classList.toggle('done',box.checked);});}
-  checklistItems.forEach(li=>{const box=li.querySelector('input'); li.addEventListener('click',e=>{if(e.target!==box)box.checked=!box.checked; li.classList.toggle('done',box.checked); saveChecklist();}); box.addEventListener('change',()=>{li.classList.toggle('done',box.checked);saveChecklist();});});
-  loadChecklist();
-  const initialPage=location.hash.slice(1); showPage(document.getElementById(initialPage)?initialPage:'plan',false);
-  window.addEventListener('hashchange',()=>{const pageId=location.hash.slice(1);if(document.getElementById(pageId))showPage(pageId,false);});
+(function(){
+  try{
+    var m=location.hash.slice(1), r=m&&document.getElementById("t-"+m);
+    if(r&&r.classList.contains("tab-radio")) r.checked=true;
+    var hero=document.getElementById("top");
+    document.querySelectorAll(".tab-radio").forEach(function(t){
+      t.addEventListener("change",function(){ var h=hero.offsetHeight; if(window.scrollY>h) window.scrollTo(0,h); });
+    });
+  }catch(e){}
+  var KEY="snowdon-ticks-3", boxes=document.querySelectorAll(".checks input"), saved={};
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ saved={}; }
+  boxes.forEach(function(b,i){
+    b.checked=!!saved[i];
+    b.addEventListener("change",function(){
+      saved[i]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+    });
+  });
+})();
 </script>
-
 </body>
 </html>
